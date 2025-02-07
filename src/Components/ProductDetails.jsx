@@ -12,9 +12,7 @@ const ProductDetail = () => {
 
   const fetchSingle = async (id) => {
     try {
-      const data = await axios.get(
-        `https://fakestoreapi.com/products/${id}`
-      );
+      const data = await axios.get(`https://fakestoreapi.com/products/${id}`);
       setProductDetails(data.data); // Store the fetched product details
     } catch (error) {
       console.error("Error fetching product details:", error);
@@ -34,7 +32,7 @@ const ProductDetail = () => {
   if (!productDetails) return null;
 
   return (
-    <div className="inset-0 flex fixed items-center justify-center z-50">
+    <div className="inset-0 px-6 md:px-0 flex fixed items-center justify-center z-50">
       <div
         className="absolute inset-0 bg-gray-800 opacity-50"
         onClick={handleClose}
@@ -60,7 +58,7 @@ const ProductDetail = () => {
             <p className="text-2xl font-bold">${productDetails?.price}</p>
             <h3 className="font-bold text-lg mt-2">{productDetails?.title}</h3>
             <p className="text-gray-600 mt-2 text-sm">
-              {productDetails?.description.slice(0,120)}
+              {productDetails?.description.slice(0, 120)}
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@ const Applayout = () => {
   const modal = useSelector((state) => state.modal.show);
 
   return (
-    <div className="w-full px-10 py-7">
+    <div className="w-full px-4 py-3 md:px-10 md:py-7">
       {modal && <ProductDetail />}
       <Toaster
         toastOptions={{
